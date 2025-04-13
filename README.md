@@ -1,1 +1,1 @@
-## My solutions for Leetcode C tasks/problems
+## My solutions for Leetcode & other C tasks/problems
