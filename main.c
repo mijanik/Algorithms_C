@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "reverse_linked_list.h"
+#include "balanced_tree.h"
 
 char find_first_not_duplicate(char* string, int size) {
 
@@ -24,9 +25,12 @@ char find_first_not_duplicate(char* string, int size) {
 
 
 int main(void) {
-    printf("%c\n", find_first_not_duplicate("google", 6));
+    ///printf("%c\n", find_first_not_duplicate("google", 6));
 
-    reverse_linked_list_test();
+    //reverse_linked_list_test();
+    //test_get_tree_height();
+    test_case_unbalanced_deep_left();
+    test_case_symmetric_but_unbalanced();
 
     return 0;
 }

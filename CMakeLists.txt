@@ -7,4 +7,5 @@ add_executable(Algoritms_C main.c
         reverse_linked_list.h
         reverse_linked_list.c
         balanced_tree.c
+        balanced_tree.h
 )
