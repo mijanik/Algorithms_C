@@ -31,11 +31,15 @@ void delete_tree(TreeNode_t* root) {
     free(root); // a później bieżący
 }
 
+// Funkcja do sprawdzania wysokości drzewa i jego zbalansowania
+// Zwraca wysokość.
+// Przyjmuje wskaźnik do korzenia drzewa i wskaźnik do balansu (którego wartość zmienia).
 int get_tree_height(TreeNode_t* root, int* balance) {
     if (root == NULL) return 0;
     int left_height = 0;
     int right_height = 0;
 
+    // sprawdź wysokość i balans drzew po lewej i po prawej stronie
     if (root->left != NULL) {
         left_height = get_tree_height(root->left, balance);
     }
@@ -45,14 +49,16 @@ int get_tree_height(TreeNode_t* root, int* balance) {
 
     //printf("DEBUG: Left height: %d, right height: %d\n", left_height, right_height);
 
+    // sprawdź balans z perspektywy bieżącego roota -> 1 = jest OK; 0 = niezbalansowane,
+    // jeśli już jakieś było niezbalansowane to nawet nie trzeba sprawdzać
     if (balance != NULL && *balance != 0)
         *balance = (abs(left_height-right_height) <= 1);
 
     // if (balance != NULL)
     //     printf("DEBUG: Balance: %d\n", *balance);
 
-    // nie ma już kolejnych gałęzi
-    if (root->left == NULL && root->right == NULL) return 1;
+    // nie ma już kolejnych gałęzi - wysokość aktualnego drzewa to 1
+    if (root->left == NULL && root->right == NULL) return 1; // w sumie to niepotrzebne, poniżej to wystarczy
 
     // wysokość drzewa to jego najdłuższa gałąź
     return (left_height > right_height) ? left_height + 1 : right_height + 1;
@@ -63,29 +69,6 @@ int is_balanced(TreeNode_t* root) {
     int balance = 1;
     get_tree_height(root, &balance);
     return balance;
-
-    // int left_height = 0;
-    // int right_height = 0;
-    //
-    // int left_balanced = 1;
-    // int right_balanced = 1;
-    // int current_balanced = 1;
-    //
-    // if (root->left != NULL) {
-    //     left_balanced = is_balanced(root->left); // czy podrzędne lewe jest zbalansowane
-    //     left_height = get_tree_height(root->left);
-    // }
-    //
-    // if (root->right != NULL) {
-    //     right_balanced = is_balanced(root->right); // czy podrzędne prawe jest zbalansowane
-    //     right_height = get_tree_height(root->right);
-    // }
-    //
-    // current_balanced = (abs(left_height-right_height) <= 1);  // czy bieżące drzewo jest zbalansowane
-    //
-    // //printf("DEBUG: Left height: %d, right height: %d\n", left_height, right_height);
-    //
-    // return (left_balanced && right_balanced && current_balanced);
 }
 
 ///////////////////////////////////////////////////////////////////

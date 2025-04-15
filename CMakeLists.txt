@@ -8,4 +8,8 @@ add_executable(Algoritms_C main.c
         reverse_linked_list.c
         balanced_tree.c
         balanced_tree.h
+        merge_sorted_lists.c
+        merge_sorted_lists.h
+        remove_duplicates_sorted_list.c
+        two_number_sum_target.c
 )

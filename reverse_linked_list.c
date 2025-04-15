@@ -4,6 +4,12 @@
 
 #include "reverse_linked_list.h"
 
+typedef struct Node{
+    int value;
+    struct Node* prev;
+    struct Node* next;
+} Node_t;
+
 Node_t* create_node(const int value) {
     Node_t* new_node = malloc(sizeof(Node_t));
     new_node->value = value;
