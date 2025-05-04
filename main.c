@@ -2,6 +2,9 @@
 // #include "reverse_linked_list.h"
 // #include "balanced_tree.h"
 #include "merge_sorted_lists.h"
+#include "gpio_driver.h"
+#include "bits_to_bytes.h"
+#include "reverse_bits_uint32.h"
 
 char find_first_not_duplicate(char* string, int size) {
 
@@ -32,7 +35,10 @@ int main(void) {
     //test_get_tree_height();
     // test_case_unbalanced_deep_left();
     // test_case_symmetric_but_unbalanced();
-    test_merge_lists();
+    //test_merge_lists();
+    //test_gpio();
+    //test_pack_bits_to_bytes();
+    test_reverseBits();
 
     return 0;
 }

@@ -12,4 +12,11 @@ add_executable(Algoritms_C main.c
         merge_sorted_lists.h
         remove_duplicates_sorted_list.c
         two_number_sum_target.c
+        gpio_driver.h
+        gpio_driver.c
+        bits_to_bytes.h
+        bits_to_bytes.c
+        search_insert_pos.h
+        binary_tree_inorder.h
+        reverse_bits_uint32.h
 )
